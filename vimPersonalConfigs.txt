@@ -1,0 +1,48 @@
+" Configurações Pessoais
+ 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+let g:airline_powerline_fonts = 1
+
+let g:airline_theme='luna'
+
+set showmatch "mostra caracteres ( { [ quando fechados
+set mouse=a "habilita todas as acoes do mouse
+set nu "numeracao de linhas
+set ts=4 "Seta onde o tab para
+set sw=4 "largura do tab
+
+syntax on
+colorscheme luna-term
+
+"----------------------------------------
+" Teclas para copiar, recortar e colar
+
+"Copia do Vim para o clipboard
+set clipboard=unnamedplus
+set clipboard=unnamed
+
+"Ctrl+c - copiar
+vmap <C-c> "+yi
+
+"Ctrl+x - recortar
+vmap <C-x> "+c
+
+"Ctrl+v - colar
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+set clipboard=unnamed
+
+"Ctrl+a - para selecionar tudo
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+"Ctrl+s - para salvar
+noremap <C-S> :update<CR>i
+vnoremap <C-S> <C-C>:update<CR>i
+inoremap <C-S> <C-O>:update<CR>i
